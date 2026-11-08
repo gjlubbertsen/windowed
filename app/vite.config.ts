@@ -13,7 +13,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
-      includeAssets: ['favicon.svg', 'apple-touch-icon-180x180.png'],
+      includeAssets: ['favicon.svg', 'apple-touch-icon-180x180.png', 'robots.txt'],
       manifest: {
         name: 'Venster van stresstolerantie',
         short_name: 'Venster',
