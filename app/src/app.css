@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+
+:root {
+  --rood: #b91c1c;
+  --rood-licht: #dc2626;
+  --oranje: #d97706;
+  --oranje-licht: #f59e0b;
+  --groen: #15803d;
+  --groen-licht: #16a34a;
+  --inkt: #1c1917;
+  --papier: #f5f5f4;
+}
+
+html,
+body {
+  background: var(--papier);
+  color: var(--inkt);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Banden van het venster */
+.band {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 4.5rem;
+  flex: 1 1 0;
+  padding: 0.5rem 0.9rem;
+  text-align: left;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.band:active {
+  filter: brightness(0.9);
+}
+.band-rood {
+  background: var(--rood-licht);
+}
+.band-oranje {
+  background: var(--oranje-licht);
+}
+.band-groen {
+  background: var(--groen-licht);
+}
+.band .score {
+  font-size: 1.6rem;
+  font-weight: 800;
+  width: 2rem;
+  text-align: center;
+  opacity: 0.85;
+}
+.band .tekst {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.band .tekst strong {
+  font-size: 0.95rem;
+}
+.band .tekst small {
+  font-size: 0.72rem;
+  opacity: 0.9;
+  margin-top: 0.15rem;
+}
+.band-geselecteerd::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 4px solid rgba(255, 255, 255, 0.95);
+  pointer-events: none;
+}
+.grens-hard {
+  border-top: 5px solid var(--rood);
+}
+.grens-zacht {
+  border-top: 3px dashed rgba(255, 255, 255, 0.7);
+}
+
+/* Chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1.5px solid #d6d3d1;
+  background: #fff;
+  color: var(--inkt);
+  font-size: 0.85rem;
+  line-height: 1.1;
+  text-align: left;
+}
+.chip-aan {
+  background: var(--inkt);
+  border-color: var(--inkt);
+  color: #fff;
+}
+
+.knop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.9rem;
+  font-weight: 600;
+  background: var(--inkt);
+  color: #fff;
+  width: 100%;
+}
+.knop:active {
+  opacity: 0.85;
+}
+.knop-licht {
+  background: #fff;
+  color: var(--inkt);
+  border: 1.5px solid #d6d3d1;
+}
+
+.kaart {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.veld {
+  width: 100%;
+  border: 1.5px solid #d6d3d1;
+  border-radius: 0.75rem;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+  font-size: 1rem;
+}
+.veld:focus {
+  outline: 2px solid var(--inkt);
+  outline-offset: 1px;
+}
+
+.kop {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #57534e;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.6rem;
+  color: #fff;
+  font-weight: 800;
+  flex: none;
+}
